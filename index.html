@@ -68,9 +68,29 @@
 
         .gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
             margin: 3rem 0;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .gallery .gift-card:nth-child(4),
+        .gallery .gift-card:nth-child(5) {
+            grid-column: span 1;
+        }
+
+        .gallery .gift-card:nth-child(4) {
+            grid-column: 1 / 2;
+            margin-left: auto;
+            margin-right: 1rem;
+        }
+
+        .gallery .gift-card:nth-child(5) {
+            grid-column: 2 / 3;
+            margin-left: 1rem;
+            margin-right: auto;
         }
 
         .gift-card {
@@ -219,6 +239,13 @@
                 grid-template-columns: 1fr;
             }
 
+            .gallery .gift-card:nth-child(4),
+            .gallery .gift-card:nth-child(5) {
+                grid-column: 1;
+                margin-left: 0;
+                margin-right: 0;
+            }
+
             .gift-card img {
                 height: 300px;
             }
@@ -339,4 +366,8 @@
     </div>
 
     <footer>
-        <p>Handmade in small batches in Paragould, Arkansas | Lucil
+        <p>Handmade in small batches in Paragould, Arkansas | Lucile's Pantry</p>
+        <p style="margin-top: 0.5rem; font-size: 0.8rem;">Batch #2087 | Date Made: 11/12/2025</p>
+    </footer>
+</body>
+</html>
