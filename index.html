@@ -67,30 +67,23 @@
         }
 
         .gallery {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            display: flex;
+            flex-wrap: wrap;
             gap: 2rem;
-            margin: 3rem 0;
+            margin: 3rem auto;
             max-width: 1200px;
-            margin-left: auto;
-            margin-right: auto;
+            justify-content: center;
         }
 
-        .gallery .gift-card:nth-child(4),
-        .gallery .gift-card:nth-child(5) {
-            grid-column: span 1;
+        .gift-card {
+            flex: 0 1 calc(33.333% - 1.5rem);
+            min-width: 300px;
         }
 
-        .gallery .gift-card:nth-child(4) {
-            grid-column: 1 / 2;
-            margin-left: auto;
-            margin-right: 1rem;
-        }
-
-        .gallery .gift-card:nth-child(5) {
-            grid-column: 2 / 3;
-            margin-left: 1rem;
-            margin-right: auto;
+        @media (max-width: 1024px) {
+            .gift-card {
+                flex: 0 1 calc(50% - 1rem);
+            }
         }
 
         .gift-card {
@@ -235,15 +228,9 @@
                 font-size: 2rem;
             }
 
-            .gallery {
-                grid-template-columns: 1fr;
-            }
-
-            .gallery .gift-card:nth-child(4),
-            .gallery .gift-card:nth-child(5) {
-                grid-column: 1;
-                margin-left: 0;
-                margin-right: 0;
+            .gift-card {
+                flex: 0 1 100%;
+                min-width: unset;
             }
 
             .gift-card img {
