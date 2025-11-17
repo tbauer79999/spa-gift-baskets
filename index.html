@@ -250,9 +250,60 @@
                 height: 300px;
             }
         }
+
+        /* Lightbox styles */
+        .gift-card img {
+            cursor: pointer;
+        }
+
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            font-size: 40px;
+            color: white;
+            cursor: pointer;
+            background: none;
+            border: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .lightbox-close:hover {
+            color: #8b7355;
+        }
     </style>
 </head>
 <body>
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+        <img id="lightbox-img" src="" alt="Full size image">
+    </div>
     <header>
         <h1>Handmade Spa Gift Baskets</h1>
         <p class="tagline">by Lucile's Pantry</p>
@@ -266,7 +317,7 @@
 
         <div class="gallery">
             <div class="gift-card">
-                <img src="images/spa-gift-complete.jpg" alt="Complete Spa Gift Bag with label showing all contents">
+                <img src="images/spa-gift-complete.jpg" alt="Complete Spa Gift Bag with label showing all contents" onclick="openLightbox(this.src)">
                 <div class="gift-card-content">
                     <h3>Complete Spa Experience</h3>
                     <p>Everything you need for a relaxing spa day: body soap, sugar scrub, bath salt, hand towel, loofa, soy tea light, wooden scoop, and chamomile or black tea bag.</p>
@@ -274,7 +325,7 @@
             </div>
 
             <div class="gift-card">
-                <img src="images/awaken.jpg" alt="Awaken scent spa gift set">
+                <img src="images/awaken.jpg" alt="Awaken scent spa gift set" onclick="openLightbox(this.src)">
                 <div class="gift-card-content">
                     <h3>Awaken</h3>
                     <p>Peppermint - Sweet Orange - Vanilla - Cedarwood. An energizing blend to start your day refreshed and invigorated.</p>
@@ -282,7 +333,7 @@
             </div>
 
             <div class="gift-card">
-                <img src="images/evening-calm.jpg" alt="Evening Calm scent spa gift set">
+                <img src="images/evening-calm.jpg" alt="Evening Calm scent spa gift set" onclick="openLightbox(this.src)">
                 <div class="gift-card-content">
                     <h3>Evening Calm</h3>
                     <p>Vanilla - Cedarwood - Patchouli. A soothing blend perfect for unwinding after a long day.</p>
@@ -290,7 +341,7 @@
             </div>
 
             <div class="gift-card">
-                <img src="images/fresh-start.jpg" alt="Fresh Start scent spa gift set">
+                <img src="images/fresh-start.jpg" alt="Fresh Start scent spa gift set" onclick="openLightbox(this.src)">
                 <div class="gift-card-content">
                     <h3>Fresh Start</h3>
                     <p>Peppermint - Sweet Orange - Vanilla. A crisp, uplifting blend that brings renewed energy and clarity.</p>
@@ -298,7 +349,7 @@
             </div>
 
             <div class="gift-card">
-                <img src="images/basket-display.jpg" alt="Beautiful basket display of multiple spa gift sets">
+                <img src="images/basket-display.jpg" alt="Beautiful basket display of multiple spa gift sets" onclick="openLightbox(this.src)">
                 <div class="gift-card-content">
                     <h3>Gift Basket Options</h3>
                     <p>Beautiful presentation in rustic baskets, perfect for gifting. Each basket is wrapped with care and includes decorative accents.</p>
@@ -369,5 +420,28 @@
         <p>Handmade in small batches in Paragould, Arkansas | Lucile's Pantry</p>
         <p style="margin-top: 0.5rem; font-size: 0.8rem;">Batch #2087 | Date Made: 11/12/2025</p>
     </footer>
+
+    <script>
+        function openLightbox(imageSrc) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            lightboxImg.src = imageSrc;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close lightbox with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+    </script>
 </body>
 </html>
