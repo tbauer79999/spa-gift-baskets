@@ -254,6 +254,59 @@
             color: #6b5344;
         }
 
+        .coming-soon {
+            background: linear-gradient(135deg, #f5f3f0 0%, #e8e4df 100%);
+            padding: 3rem 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin: 3rem 0 2rem 0;
+            text-align: center;
+        }
+
+        .coming-soon h2 {
+            color: #8b7355;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+
+        .coming-soon-items {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .coming-soon-item {
+            background: white;
+            padding: 1.5rem 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            min-width: 200px;
+            transition: transform 0.3s ease;
+        }
+
+        .coming-soon-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .coming-soon-item h3 {
+            color: #6b5344;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .coming-soon-badge {
+            display: inline-block;
+            background: #8b7355;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+        }
+
         footer {
             text-align: center;
             padding: 2rem;
@@ -435,6 +488,25 @@
                 <p><strong>Awaken:</strong> Peppermint, Sweet Orange, Vanilla, Cedarwood</p>
                 <p><strong>Evening Calm:</strong> Vanilla, Cedarwood, Patchouli</p>
                 <p><strong>Fresh Start:</strong> Peppermint, Sweet Orange, Vanilla</p>
+            </div>
+        </div>
+
+        <div class="coming-soon">
+            <h2>Coming Soon!</h2>
+            <p style="font-size: 1.1rem; color: #666; margin-bottom: 1rem;">We're expanding our handmade collection with exciting new products</p>
+            <div class="coming-soon-items">
+                <div class="coming-soon-item">
+                    <h3>Candied Nuts</h3>
+                    <span class="coming-soon-badge">Coming Soon</span>
+                </div>
+                <div class="coming-soon-item">
+                    <h3>Cake in a Mug</h3>
+                    <span class="coming-soon-badge">Coming Soon</span>
+                </div>
+                <div class="coming-soon-item">
+                    <h3>Individual Bath Salts & Scrubs</h3>
+                    <span class="coming-soon-badge">Coming Soon</span>
+                </div>
             </div>
         </div>
 
