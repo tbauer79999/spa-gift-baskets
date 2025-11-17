@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handmade Spa Gift Baskets | Lucile's Pantry</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f3f0 0%, #e8e4df 100%);
+        }
+
+        header {
+            background: linear-gradient(135deg, #8b7355 0%, #6b5344 100%);
+            color: white;
+            text-align: center;
+            padding: 3rem 1rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            font-style: italic;
+            opacity: 0.95;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .intro h2 {
+            color: #8b7355;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+
+        .intro p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 1rem;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .gift-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gift-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .gift-card img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gift-card-content {
+            padding: 1.5rem;
+        }
+
+        .gift-card h3 {
+            color: #8b7355;
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+        }
+
+        .gift-card p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .details-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin: 2rem 0;
+        }
+
+        .details-section h2 {
+            color: #8b7355;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+            border-bottom: 2px solid #8b7355;
+            padding-bottom: 0.5rem;
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .detail-item h3 {
+            color: #6b5344;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .detail-item ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .detail-item li {
+            padding: 0.3rem 0;
+            color: #555;
+        }
+
+        .detail-item li:before {
+            content: "✓ ";
+            color: #8b7355;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        .scent-options {
+            background: #f9f7f5;
+            padding: 1rem;
+            border-radius: 5px;
+            margin: 1rem 0;
+        }
+
+        .scent-options h4 {
+            color: #8b7355;
+            margin-bottom: 0.5rem;
+        }
+
+        .scent-options p {
+            color: #666;
+            font-style: italic;
+        }
+
+        .contact {
+            text-align: center;
+            padding: 3rem 1rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin: 2rem 0;
+        }
+
+        .contact h2 {
+            color: #8b7355;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+
+        .contact p {
+            font-size: 1.1rem;
+            color: #555;
+            margin: 0.5rem 0;
+        }
+
+        .contact a {
+            color: #8b7355;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .contact a:hover {
+            color: #6b5344;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .gift-card img {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Handmade Spa Gift Baskets</h1>
+        <p class="tagline">by Lucile's Pantry</p>
+    </header>
+
+    <div class="container">
+        <div class="intro">
+            <h2>Perfect Gifts for the Holidays</h2>
+            <p>Treat someone special (or yourself!) to a luxurious spa experience at home. Each gift bag is handmade in small batches in Paragould, Arkansas, with natural ingredients and thoughtful care.</p>
+        </div>
+
+        <div class="gallery">
+            <div class="gift-card">
+                <img src="/mnt/user-data/uploads/imagejpeg_0.jpg" alt="Complete Spa Gift Bag with label showing all contents">
+                <div class="gift-card-content">
+                    <h3>Complete Spa Experience</h3>
+                    <p>Everything you need for a relaxing spa day: body soap, sugar scrub, bath salt, hand towel, loofa, soy tea light, wooden scoop, and chamomile or black tea bag.</p>
+                </div>
+            </div>
+
+            <div class="gift-card">
+                <img src="/mnt/user-data/uploads/imagejpeg_1.jpg" alt="Awaken scent spa gift set">
+                <div class="gift-card-content">
+                    <h3>Awaken</h3>
+                    <p>Peppermint - Sweet Orange - Vanilla - Cedarwood. An energizing blend to start your day refreshed and invigorated.</p>
+                </div>
+            </div>
+
+            <div class="gift-card">
+                <img src="/mnt/user-data/uploads/imagejpeg_2.jpg" alt="Evening Calm scent spa gift set">
+                <div class="gift-card-content">
+                    <h3>Evening Calm</h3>
+                    <p>Vanilla - Cedarwood - Patchouli. A soothing blend perfect for unwinding after a long day.</p>
+                </div>
+            </div>
+
+            <div class="gift-card">
+                <img src="/mnt/user-data/uploads/imagejpeg_3.jpg" alt="Fresh Start scent spa gift set">
+                <div class="gift-card-content">
+                    <h3>Fresh Start</h3>
+                    <p>Peppermint - Sweet Orange - Vanilla. A crisp, uplifting blend that brings renewed energy and clarity.</p>
+                </div>
+            </div>
+
+            <div class="gift-card">
+                <img src="/mnt/user-data/uploads/662782949.JPG" alt="Beautiful basket display of multiple spa gift sets">
+                <div class="gift-card-content">
+                    <h3>Gift Basket Options</h3>
+                    <p>Beautiful presentation in rustic baskets, perfect for gifting. Each basket is wrapped with care and includes decorative accents.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="details-section">
+            <h2>What's Included</h2>
+            <div class="details-grid">
+                <div class="detail-item">
+                    <h3>Each Gift Bag Contains:</h3>
+                    <ul>
+                        <li>Body Soap</li>
+                        <li>Sugar Scrub (8 oz)</li>
+                        <li>Bath Salt (8 oz)</li>
+                        <li>Hand Towel</li>
+                        <li>Loofa</li>
+                        <li>Soy Tea Light</li>
+                        <li>Wooden Scoop</li>
+                        <li>Chamomile or Black Tea Bag</li>
+                    </ul>
+                </div>
+
+                <div class="detail-item">
+                    <h3>Natural Ingredients:</h3>
+                    <ul>
+                        <li>Castile Soap (water, coconut oil, olive oil)</li>
+                        <li>Jojoba Oil</li>
+                        <li>Vegetable Glycerin</li>
+                        <li>Vitamin E (Tocopherol)</li>
+                        <li>Activated Charcoal</li>
+                        <li>Essential Oils (varies by scent)</li>
+                        <li>Epsom Salt & Sea Salt</li>
+                        <li>Sugar & Baking Soda</li>
+                    </ul>
+                </div>
+
+                <div class="detail-item">
+                    <h3>How to Use:</h3>
+                    <ul>
+                        <li><strong>Bath Salts:</strong> Add 1/4 cup to warm water</li>
+                        <li><strong>Sugar Scrub:</strong> Apply to clean damp skin, massage gently in circular motion, rinse with warm water</li>
+                        <li><strong>Body Soap:</strong> Lather, scrub, and rinse</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="scent-options">
+                <h4>Available Scents:</h4>
+                <p><strong>Awaken:</strong> Peppermint, Sweet Orange, Vanilla, Cedarwood</p>
+                <p><strong>Evening Calm:</strong> Vanilla, Cedarwood, Patchouli</p>
+                <p><strong>Fresh Start:</strong> Peppermint, Sweet Orange, Vanilla</p>
+            </div>
+        </div>
+
+        <div class="contact">
+            <h2>Order Your Gift Baskets Today</h2>
+            <p>Handmade with love in Paragould, Arkansas</p>
+            <p>by Lucile's Pantry</p>
+            <p style="margin-top: 1.5rem;">For pricing and orders, please contact:</p>
+            <p><a href="mailto:lucilespantry@email.com">lucilespantry@email.com</a></p>
+            <p>or call: <a href="tel:555-123-4567">(555) 123-4567</a></p>
+        </div>
+    </div>
+
+    <footer>
+        <p>Handmade in small batches in Paragould, Arkansas | Lucile's Pantry</p>
+        <p style="margin-top: 0.5rem; font-size: 0.8rem;">Batch #2087 | Date Made: 11/12/2025</p>
+    </footer>
+</body>
+</html>
